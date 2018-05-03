@@ -1,0 +1,28 @@
+CC=gcc
+CFLAGS=-g -Wall 
+OPENMP_LIBS=-lpthread -fopenmp
+OTHER_FLAG=-I.
+
+SOURCE_MATVECT=omp_mat_vect.c
+OBJ_MATVECT=omp_mat_vect.out
+
+
+make:
+	$(CC) $(CFLAGS) $(OPENMP_LIBS) $(SOURCE_MATVECT) -o $(OBJ_MATVECT)
+
+clean: 
+	rm *.out
+
+test1:
+	./$(OBJ_MATVECT) 1 8000000 8
+	./$(OBJ_MATVECT) 2 8000000 8
+	./$(OBJ_MATVECT) 4 8000000 8
+test2:
+	./$(OBJ_MATVECT) 1 8000 8000
+	./$(OBJ_MATVECT) 2 8000 8000
+	./$(OBJ_MATVECT) 4 8000 8000
+test3:
+	./$(OBJ_MATVECT) 1 8 8000000
+	./$(OBJ_MATVECT) 2 8 8000000
+	./$(OBJ_MATVECT) 4 8 8000000
+
