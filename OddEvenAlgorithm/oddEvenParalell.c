@@ -1,5 +1,5 @@
 #include <stdio.h>
-adfasdf#include <math.h>
+#include <math.h>
 #include <time.h>
 #include <mpi.h>
 
@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
   int tamArray = atoi(argv[1]);
   int rank, size;
   MPI_Status status;
-  int  arr[MAX]={16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+  //int  arr[MAX]={16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
   int *arr = (int*) malloc(tamArray*sizeof(int));
   int i, count;
   int A, B,value[1];
